@@ -16,7 +16,7 @@ const Card = ({ dentist, isFavorite, onRemoveFavorite }) => {
     <div className={`card ${theme === 'dark' ? 'card--dark' : ''}`}>
       <Link to={`/dentist/${dentist.id}`}>
         <div className="card__image-container">
-          <img className="card__image" src="../../public/images/doctor.jpg" alt="Doctor" />
+          <img className="card__image" src="../assets/doctor.jpg" alt="Foto-Doctor" />
         </div>
         <h3 className="card__title">{dentist.name}</h3>
         <p className="card__info">{dentist.username}</p>
