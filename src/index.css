@@ -28,20 +28,53 @@ nav{
   width: 80vw;
   justify-content: flex-start;
   padding: 1rem;
+  background-color: var(--nav-background-color);
+  color: var(--nav-text-color);
+}
+
+nav {
+  display: flex;
+  width: 80vw;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: var(--nav-background-color);
+  color: var(--nav-text-color);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 1rem;
+}
+
+nav ul li a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: var(--nav-link-hover-color);
 }
 
 a{
-  color: #000;
+  color: var(--nav-link-color);
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
 a:hover{
-  color: rgb(136, 136, 136);
+  color: var(--nav-link-hover-color);
 } 
 
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   padding: 2rem;
@@ -50,6 +83,8 @@ footer {
   width: 90%;
   height: 40px;
   margin-top: 2rem;
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
 }
 
 footer > img{
@@ -59,6 +94,7 @@ footer > img{
 footer > p{
   margin: 0;
   padding-top: 0.7rem;
+  background-color: #e23939;
 }
 
 form{
@@ -70,21 +106,68 @@ form{
   margin: 0 auto;
 }
 
-.card{
+.card {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  padding: 1rem;
+  border: 1px solid var(--card-border-color);
+  border-radius: 8px;
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+.card--dark {
+  border-color: var(--card-border-color-dark);
+  background-color: var(--card-background-color-dark);
+  color: var(--card-text-color-dark);
 }
 
-.card-grid{
+.card__image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__title {
+  margin-bottom: 0.5rem;
+}
+
+.card__info {
+  margin-bottom: 0.25rem;
+}
+
+.card__button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  cursor: pointer;
+}
+
+.card__button--add {
+  background-color: var(--button-add-background-color);
+  color: var(--button-add-text-color);
+}
+
+.card__button--remove {
+  background-color: var(--button-remove-background-color);
+  color: var(--button-remove-text-color);
+}
+
+.card-grid {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
@@ -95,7 +178,7 @@ form{
 }
 
 table {
- border-collapse: collapse;
+  border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     display: table;
@@ -119,4 +202,39 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+:root {
+  --nav-background-color: #fcf4f4;
+  --nav-text-color: #131111;
+  --nav-link-color: #1b1818;
+  --nav-link-hover-color: #1a1818;
+  --footer-background-color: #dbd8d8;
+  --footer-text-color: #ccc;
+  --card-border-color: #ccc;
+  --card-background-color: #fff;
+  --card-text-color: #dad6d6;
+  --card-border-color-dark: #666;
+  --card-background-color-dark: #444;
+  --card-text-color-dark: #ccc;
+  --button-background-color: #ccc;
+  --button-text-color: #333;
+  --button-add-background-color: #4CAF50;
+  --button-add-text-color: #fff;
+  --button-remove-background-color: #f44336;
+  --button-remove-text-color: #fff;
+}
+
+.theme-dark {
+  --nav-background-color: #222;
+  --nav-text-color: #fff;
+  --nav-link-color: #ccc;
+  --nav-link-hover-color: #666161;
+  --footer-background-color: #222;
+  --footer-text-color: #d6d3d3;
+  --card-border-color: #666;
+  --card-background-color: #333;
+  --card-text-color: #f8efef;
+  --button-background-color: #241f1f;
+  --button-text-color: #e9e6e6;
 }
